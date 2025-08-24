@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Floating tech icons */}
   <div className="absolute inset-0 pointer-events-none">
      {techIcons.map(({ Icon, name, delay }, index) => (
-          <motion.div
+      <motion.div
             key={name}
             className="absolute tech-icon"
             style={{
