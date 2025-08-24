@@ -1,9 +1,22 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiDownload } from "react-icons/fi"
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb, SiNodedotjs } from "react-icons/si"
-import { TbBrandThreejs } from "react-icons/tb"
+import { motion } from "framer-motion";
+import {
+  FiArrowRight,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiDownload,
+} from "react-icons/fi";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiNodedotjs,
+} from "react-icons/si";
+import { TbBrandThreejs } from "react-icons/tb";
 
 const techIcons = [
   { Icon: SiReact, name: "React", delay: 0 },
@@ -13,27 +26,30 @@ const techIcons = [
   { Icon: SiMongodb, name: "MongoDB", delay: 0.8 },
   { Icon: SiNodedotjs, name: "Node.js", delay: 1.0 },
   { Icon: TbBrandThreejs, name: "Three.js", delay: 1.2 },
-]
+];
 
 export default function Hero() {
   const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const downloadCV = () => {
-    const link = document.createElement("a")
-    link.href = "/Sheriff_Sodiq_CV.pdf"
-    link.download = "Sheriff_Sodiq_CV.pdf"
-    link.click()
-  }
+    const link = document.createElement("a");
+    link.href = "/Sheriff_Sodiq_CV.pdf";
+    link.download = "Sheriff_Sodiq_CV.pdf";
+    link.click();
+  };
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-16">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-16"
+    >
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 via-transparent to-primary-blue/5 animate-pulse-slow" />
       {/* Floating tech icons */}
-  <div className="absolute inset-0 pointer-events-none">
-     {techIcons.map(({ Icon, name, delay }, index) => (
-      <motion.div
+      <div className="absolute inset-0 pointer-events-none">
+        {techIcons.map(({ Icon, name, delay }, index) => (
+          <motion.div
             key={name}
             className="absolute tech-icon"
             style={{
@@ -62,7 +78,11 @@ export default function Hero() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center z-10">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -87,8 +107,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Building functional & scalable full-stack web applications with modern technologies. Passionate about
-            creating immersive 3D experiences and exceptional user interfaces.
+            Building functional & scalable full-stack web applications with
+            modern technologies. Passionate about creating immersive 3D
+            experiences and exceptional user interfaces.
           </motion.p>
 
           <motion.div
@@ -125,9 +146,21 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1 }}
           >
             {[
-              { Icon: FiGithub, href: "https://github.com/sodiqsheriff", label: "GitHub" },
-              { Icon: FiLinkedin, href: "https://linkedin.com/in/sodiqsheriff", label: "LinkedIn" },
-              { Icon: FiMail, href: "mailto:sodiqheriff9@gmail.com", label: "Email" },
+              {
+                Icon: FiGithub,
+                href: "https://github.com/sodiqsheriff",
+                label: "GitHub",
+              },
+              {
+                Icon: FiLinkedin,
+                href: "https://linkedin.com/in/sodiqsheriff",
+                label: "LinkedIn",
+              },
+              {
+                Icon: FiMail,
+                href: "mailto:sodiqheriff9@gmail.com",
+                label: "Email",
+              },
             ].map(({ Icon, href, label }) => (
               <motion.a
                 key={label}
@@ -145,5 +178,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
