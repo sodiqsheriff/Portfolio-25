@@ -50,29 +50,43 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-primary-blue/50 transition-all duration-300 card-hover group"
+              className="flex items-center gap-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full px-4 py-2 hover:border-primary-blue/50 transition-all duration-300 group cursor-pointer chip-hover"
+              style={{ 
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.2)",
+                transform: "translateZ(0)",
+                willChange: "transform"
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.95 }}
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="p-4 bg-gray-800 rounded-xl mb-4 group-hover:bg-gray-700 transition-colors">
-                  <skill.Icon
-                    className="w-8 h-8 group-hover:scale-110 transition-transform"
-                    style={{ color: skill.color }}
-                  />
-                </div>
-                <h3 className="text-lg font-semibold">{skill.name}</h3>
-              </div>
+              <skill.Icon
+                className="w-5 h-5 group-hover:scale-110 transition-transform"
+                style={{ color: skill.color }}
+              />
+              <span className="text-sm font-medium">{skill.name}</span>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .chip-hover:hover {
+          background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+          box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.3), 
+                      0 0 0 1px rgba(59, 130, 246, 0.3);
+        }
+      `}</style>
     </section>
   )
 }
