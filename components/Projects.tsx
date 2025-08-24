@@ -56,7 +56,7 @@ const projects = [
       "Immersive 3D dashboard visualizing my dev stack. Built with Three.js and react-three-fiber. Supports touch/gyroscope on mobile.",
     image: "/3d-dashboard.png?height=300&width=500",
     tags: ["Three.js", "R3F", "GSAP", "Blender"],
-    live: "https://3d-developer-dashboard.vercel.app/",
+    live: "https://3d-developer-dashboardd.vercel.app/",
     featured: true,
     type: "3d",
     icons: [TbBrandThreejs, SiReact],

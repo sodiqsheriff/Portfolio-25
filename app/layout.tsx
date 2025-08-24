@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "Sodiq Sheriff | MERN Stack Developer & 3D Enthusiast",
   description:
     "MERN Stack Developer and 3D Enthusiast specializing in React, Next.js, TypeScript, and modern web technologies",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

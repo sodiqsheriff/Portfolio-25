@@ -35,7 +35,7 @@ export default function Hero() {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Sheriff_Sodiq_CV.pdf";
+    link.href = "/mycv.pdf";
     link.download = "Sheriff_Sodiq_CV.pdf";
     link.click();
   };
