@@ -31,8 +31,8 @@ export default function Hero() {
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 via-transparent to-primary-blue/5 animate-pulse-slow" />
       {/* Floating tech icons */}
-      <div className="absolute inset-0 pointer-events-none">
-        {techIcons.map(({ Icon, name, delay }, index) => (
+  <div className="absolute inset-0 pointer-events-none">
+     {techIcons.map(({ Icon, name, delay }, index) => (
           <motion.div
             key={name}
             className="absolute tech-icon"
