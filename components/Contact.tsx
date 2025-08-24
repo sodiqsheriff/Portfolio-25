@@ -4,12 +4,12 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { FiMail, FiSend, FiCheck, FiAlertCircle } from "react-icons/fi"
-import { useState, useRef, useEffect } from "react" // Import useEffect
+import { useState, useRef, useEffect } from "react"
 import emailjs from "@emailjs/browser"
 
 interface FormData {
-  name: string
-  email: string
+  user_name: string  // Changed to match input names
+  user_email: string // Changed to match input names
   message: string
 }
 
@@ -21,8 +21,8 @@ interface FormStatus {
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
+    user_name: "",    // Changed to match input names
+    user_email: "",   // Changed to match input names
     message: "",
   })
 
@@ -33,7 +33,6 @@ export default function Contact() {
 
   // Initialize EmailJS once when the component mounts
   useEffect(() => {
-    // Ensure these environment variables are set in your .env.local file
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
     if (publicKey) {
       emailjs.init(publicKey)
@@ -59,10 +58,10 @@ export default function Contact() {
       }
 
       const result = await emailjs.sendForm(
-        serviceId, // Your service ID
-        templateId, // Your template ID
+        serviceId,
+        templateId,
         form.current,
-        publicKey, // Your public key from EmailJS
+        publicKey,
       )
 
       if (result.status === 200) {
@@ -70,9 +69,8 @@ export default function Contact() {
           type: "success",
           message: "Message sent successfully! I'll get back to you soon. 🚀",
         })
-        setFormData({ name: "", email: "", message: "" })
+        setFormData({ user_name: "", user_email: "", message: "" }) // Updated field names
 
-        // Reset form
         if (form.current) {
           form.current.reset()
         }
@@ -135,10 +133,10 @@ export default function Contact() {
 
             <div className="space-y-6">
               <motion.div
-                className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-lg border border-gray-800"
+                className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-xl border border-gray-800"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="p-3 bg-primary-blue/10 rounded-lg">
+                <div className="p-3 bg-primary-blue/10 rounded-xl">
                   <FiMail className="w-6 h-6 text-primary-blue" />
                 </div>
                 <div>
@@ -147,12 +145,12 @@ export default function Contact() {
                 </div>
               </motion.div>
 
-              <div className="bg-gray-900/30 rounded-lg p-4 border border-gray-700">
+              <div className="bg-gray-900/30 rounded-xl p-4 border border-gray-700">
                 <h4 className="font-semibold mb-2 text-primary-blue">Response Time</h4>
                 <p className="text-gray-400 text-sm">Usually within 24-48 hours</p>
               </div>
 
-              <div className="bg-gray-900/30 rounded-lg p-4 border border-gray-700">
+              <div className="bg-gray-900/30 rounded-xl p-4 border border-gray-700">
                 <h4 className="font-semibold mb-2 text-primary-blue">What I'm Looking For</h4>
                 <ul className="text-gray-400 text-sm space-y-1">
                   <li>• Frontend/Full-stack opportunities</li>
@@ -180,13 +178,13 @@ export default function Contact() {
                   type="text"
                   id="user_name"
                   name="user_name"
-                  value={formData.name}
+                  value={formData.user_name} 
                   onChange={handleChange}
                   required
                   minLength={2}
                   maxLength={100}
                   disabled={status.type === "loading"}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg focus:border-primary-blue focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-xl focus:border-primary-blue focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Your name"
                 />
               </div>
@@ -199,11 +197,11 @@ export default function Contact() {
                   type="email"
                   id="user_email"
                   name="user_email"
-                  value={formData.email}
+                  value={formData.user_email}  
                   onChange={handleChange}
                   required
                   disabled={status.type === "loading"}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg focus:border-primary-blue focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-xl focus:border-primary-blue focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -222,7 +220,7 @@ export default function Contact() {
                   maxLength={1000}
                   rows={6}
                   disabled={status.type === "loading"}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg focus:border-primary-blue focus:outline-none transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-xl focus:border-primary-blue focus:outline-none transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell me about your project, ideas, or just say hello..."
                 />
                 <p className="text-xs text-gray-500 mt-1">{formData.message.length}/1000 characters</p>
@@ -233,7 +231,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`p-4 rounded-lg flex items-center gap-3 ${
+                  className={`p-4 rounded-xl flex items-center gap-3 ${
                     status.type === "success"
                       ? "bg-green-900/30 border border-green-500/30 text-green-300"
                       : status.type === "error"
@@ -261,7 +259,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={status.type === "loading" || status.type === "success"}
-                className={`w-full px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${
+                className={`w-full px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${
                   status.type === "success"
                     ? "bg-green-600 text-white cursor-default"
                     : status.type === "loading"
@@ -298,7 +296,7 @@ export default function Contact() {
                   <motion.button
                     onClick={() => {
                       setStatus({ type: "idle", message: "" })
-                      setFormData({ name: "", email: "", message: "" })
+                      setFormData({ user_name: "", user_email: "", message: "" }) // Updated field names
                     }}
                     className="text-primary-blue hover:text-blue-400 text-sm underline transition-colors"
                     whileHover={{ scale: 1.05 }}

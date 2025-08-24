@@ -16,8 +16,7 @@ export default function Footer() {
           className="text-center"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-gray-400 font-inter">Built with</span>
-            <FiHeart className="w-4 h-4 text-red-500" />
+            <span className="text-gray-400 font-inter">Built</span>
             <span className="text-gray-400 font-inter">using</span>
           </div>
 

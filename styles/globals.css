@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+*{
+    font-family: "Sora", sans-serif;
+
+}
+
+.Sora {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+} 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 @layer utilities {
   .text-balance {
@@ -87,4 +99,9 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+input{
+  border-radius: 8px;
 }

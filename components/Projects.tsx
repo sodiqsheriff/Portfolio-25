@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { FiExternalLink, FiGithub, FiPlay } from "react-icons/fi"
-import { SiSolidity, SiEthereum, SiOpenai, SiReact, SiNextdotjs, SiMongodb, SiSocketdotio } from "react-icons/si"
+import { SiSolidity, SiEthereum, SiOpenai, SiReact, SiNextdotjs, SiMongodb, SiSocketdotio, SiTypescript } from "react-icons/si"
 import { TbBrandThreejs } from "react-icons/tb"
 import { useState } from "react"
 
@@ -12,10 +12,9 @@ const projects = [
     title: "Web3 Job Platform",
     description:
       "Decentralized freelancing platform where employers and devs interact trustlessly. Built with Solidity smart contracts, IPFS résumé storage, and DAO dispute resolution.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/decentralized.png",
     tags: ["Next.js", "Solidity", "The Graph", "Wagmi"],
-    github: "#",
-    live: "#",
+      live: "https://web3-job-platform.vercel.app/",
     etherscan: "#",
     featured: true,
     type: "blockchain",
@@ -24,17 +23,16 @@ const projects = [
   },
   {
     id: 2,
-    title: "AI Code Review Assistant",
+    title: "Fund-R",
     description:
-      "AI-powered tool that reviews GitHub PRs via GPT-4o, suggesting optimizations with voice feedback. Cuts review time by 40% in early tests.",
-    image: "/placeholder.svg?height=300&width=500",
+      "A smart contract-based crowdfunding platform with personalized campaign recommendations.",
+    image: "/fund.png?height=300&width=500",
     tags: ["OpenAI API", "LangChain", "MongoDB", "Next.js"],
-    github: "#",
-    live: "#",
+    live: "https://fund-r-app.vercel.app/",
     demo: true,
     featured: true,
     type: "ai",
-    icons: [SiOpenai, SiMongodb, SiNextdotjs],
+    icons: [SiTypescript, SiNextdotjs],
     animation: "ai-avatar",
   },
   {
@@ -42,10 +40,9 @@ const projects = [
     title: "Real-Time Figma Clone",
     description:
       "Figma-like collaborative editor with multiplayer cursors, version history, and export options. Powered by CRDTs and WebSockets.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/figma-clone.png?height=300&width=500",
     tags: ["Socket.io", "Liveblocks", "Fabric.js", "Supabase"],
-    github: "#",
-    live: "#",
+    live: "https://custom-figma-app.vercel.app/",
     featured: true,
     type: "realtime",
     icons: [SiSocketdotio, SiReact],
@@ -57,10 +54,9 @@ const projects = [
     title: "3D Developer Dashboard",
     description:
       "Immersive 3D dashboard visualizing my dev stack. Built with Three.js and react-three-fiber. Supports touch/gyroscope on mobile.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/3d-dashboard.png?height=300&width=500",
     tags: ["Three.js", "R3F", "GSAP", "Blender"],
-    github: "#",
-    live: "#",
+    live: "https://3d-developer-dashboard.vercel.app/",
     featured: true,
     type: "3d",
     icons: [TbBrandThreejs, SiReact],
@@ -111,7 +107,7 @@ export default function Projects() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                 activeFilter === filter ? "bg-primary-blue text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"
               }`}
             >
@@ -288,19 +284,8 @@ export default function Projects() {
                     </motion.a>
                   )}
 
-                  {project.github && (
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors font-semibold"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FiGithub className="w-5 h-5" />
-                      Source Code
-                    </motion.a>
-                  )}
+                  
+                  
                 </div>
               </div>
             </motion.div>
@@ -322,7 +307,7 @@ export default function Projects() {
               onClick={(e) => e.stopPropagation()}
             >
               <h3 className="text-2xl font-bold mb-4">AI Code Review Assistant Demo</h3>
-              <div className="bg-gray-800 rounded-lg p-4 mb-4">
+              <div className="bg-gray-800 rounded-xl p-4 mb-4">
                 <pre className="text-green-400 font-mono text-sm">
                   {`function fibonacci(n) {
   if (n <= 1) return n;
@@ -330,7 +315,7 @@ export default function Projects() {
 }`}
                 </pre>
               </div>
-              <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4">
+              <div className="bg-blue-900/30 border border-blue-500/30 rounded-xl p-4">
                 <p className="text-blue-300 mb-2">🤖 AI Analysis:</p>
                 <p className="text-gray-300">
                   This recursive Fibonacci implementation has exponential time complexity O(2^n). Consider using dynamic
@@ -340,7 +325,7 @@ export default function Projects() {
               </div>
               <button
                 onClick={() => setShowDemo(false)}
-                className="mt-4 bg-primary-blue hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors"
+                className="mt-4 bg-primary-blue hover:bg-blue-600 text-white px-6 py-2 rounded-xl transition-colors"
               >
                 Close Demo
               </button>

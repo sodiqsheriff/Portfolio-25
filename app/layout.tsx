@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-sora bg-primary-bg text-primary-white antialiased">{children}</body>
+      <body className="font-[Sora] bg-primary-bg text-primary-white antialiased">{children}</body>
     </html>
   )
 }

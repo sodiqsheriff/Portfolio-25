@@ -101,7 +101,7 @@ export default function Hero() {
           >
             <motion.button
               onClick={scrollToProjects}
-              className="bg-primary-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 group"
+              className="bg-primary-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 transition-all duration-300 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -111,7 +111,7 @@ export default function Hero() {
 
             <motion.button
               onClick={downloadCV}
-              className="border border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300"
+              className="border border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -136,7 +136,7 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-gray-700 rounded-lg hover:border-primary-blue hover:text-primary-blue transition-all duration-300"
+                className="p-3 border border-gray-700 rounded-xl hover:border-primary-blue hover:text-primary-blue transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
