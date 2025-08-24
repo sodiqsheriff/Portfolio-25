@@ -26,12 +26,10 @@ export default function Hero() {
     link.download = "Sheriff_Sodiq_CV.pdf"
     link.click()
   }
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-16">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 via-transparent to-primary-blue/5 animate-pulse-slow" />
-
       {/* Floating tech icons */}
       <div className="absolute inset-0 pointer-events-none">
         {techIcons.map(({ Icon, name, delay }, index) => (
