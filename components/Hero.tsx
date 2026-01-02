@@ -35,7 +35,7 @@ export default function Hero() {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/mycv.pdf";
+    link.href = "/My_Resume_.pdf";
     link.download = "Sheriff_Sodiq_CV.pdf";
     link.click();
   };
@@ -89,7 +89,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Hi, I'm <span className="gradient-text">Sheriff Sodiq</span>
+            Hi, I'm <span className="gradient-text ">Sheriff Sodiq</span>
           </motion.h1>
 
           <motion.h2
@@ -98,7 +98,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            MERN Stack Developer & 3D Enthusiast
+            MERN Stack Engineer & 3D Enthusiast
           </motion.h2>
 
           <motion.p

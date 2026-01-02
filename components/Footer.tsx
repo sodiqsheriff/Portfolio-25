@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <p className="text-gray-500 font-inter">© 2025 Sodiq Sheriff. All rights reserved.</p>
+          <p className="text-gray-500 font-inter">© 2026 Sodiq Sheriff. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

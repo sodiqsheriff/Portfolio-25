@@ -13,6 +13,8 @@ import {
   SiFirebase,
   SiSupabase,
   SiGit,
+  SiFlutter,
+  SiDart,
 } from "react-icons/si"
 import { TbBrandThreejs } from "react-icons/tb"
 
@@ -28,6 +30,8 @@ const skills = [
   { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
   { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
+  { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
+  { name: "Dart", Icon: SiDart, color: "#0175C2" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
 ]
 

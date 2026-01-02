@@ -72,7 +72,7 @@ export default function About() {
             <p className="text-gray-400 leading-relaxed text-lg">
               I am a full-stack developer with a strong passion for frontend development, building clean, responsive
               interfaces and real-world web applications that actually work well and look good. I have worked on
-              everything from e-commerce platforms to real-time chat apps, using tools like React, Next.js, TypeScript,
+              everything from e-commerce platforms to real-time chat apps, using tools like React, Next.js, TypeScript, Dart, Flutter
               and MongoDB.
             </p>
 

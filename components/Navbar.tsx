@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
+import { SiLightning } from "react-icons/si"
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -54,8 +55,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div className="text-2xl font-bold" whileHover={{ scale: 1.05 }}>
-            <span className="gradient-text">Sheriff</span>
+          <motion.div className="flex items-center text-2xl font-bold" whileHover={{ scale: 1.05 }}>
+            <span className="gradient-text text-4xl"><SiLightning  className="gradient-text"/></span>
+            <span className="gradient-text">heriff</span>
           </motion.div>
 
           {/* Desktop Navigation */}
