@@ -66,11 +66,11 @@ export default function About() {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold mb-6">
-              MERN Stack Developer & <span className="gradient-text">3D Enthusiast</span>
+              MERN Stack Engineer & <span className="gradient-text">3D Enthusiast</span>
             </h3>
 
             <p className="text-gray-400 leading-relaxed text-lg">
-              I am a full-stack developer with a strong passion for frontend development, building clean, responsive
+              I am a full-stack Engineer with a strong passion for Software Engineering, building clean, responsive
               interfaces and real-world web applications that actually work well and look good. I have worked on
               everything from e-commerce platforms to real-time chat apps, using tools like React, Next.js, TypeScript, Dart, Flutter
               and MongoDB.
