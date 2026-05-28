@@ -2,24 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 252 56% 57%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.75rem;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-body {
-  background-color: #0a0a0a;
-  color: #ffffff;
-  overflow-x: hidden;
+@layer utilities {
+  .glass {
+    @apply bg-background/40 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  .glass-card {
+    @apply bg-secondary/30 backdrop-blur-lg border border-white/5 rounded-2xl transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-primary/50 shadow-[0_0_30px_rgba(124,58,237,0.15)] transform -translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500;
+  }
+
+  .text-gradient-web3 {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500;
+  }
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -27,18 +71,10 @@ body {
   animation: gradient 8s ease infinite;
 }
 
-.card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-.card-hover:hover {
-  transform: translateY(-8px) scale(1.02);
-}
-
-.tech-icon {
-  transition: all 0.3s ease;
-}
-
-.tech-icon:hover {
-  transform: rotate(10deg) scale(1.1);
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

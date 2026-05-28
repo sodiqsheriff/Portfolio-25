@@ -1,11 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Inter_Tight } from "next/font/google"  // Changed from Inter to Inter_Tight
 import "./globals.css"
 
+const interTight = Inter_Tight({ subsets: ["latin"] })  // Renamed variable
+
 export const metadata: Metadata = {
-  title: "Sodiq Sheriff | MERN Stack Developer & 3D Enthusiast",
+  title: "Sodiq Sheriff | Full-Stack & Web3 Engineer",
   description:
-    "MERN Stack Developer and 3D Enthusiast specializing in React, Next.js, TypeScript, and modern web technologies",
+    "Full-stack engineer specializing in Web3 systems, high-impact creative frontends, and scalable cloud architectures.",
 }
 
 export default function RootLayout({
@@ -15,12 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-[Sora] bg-primary-bg text-primary-white antialiased">{children}</body>
+      <body className={`${interTight.className} bg-background text-foreground antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }

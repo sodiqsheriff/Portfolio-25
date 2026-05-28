@@ -1,96 +1,84 @@
 "use client"
 
 import { motion } from "framer-motion"
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiMongodb,
-  SiNodedotjs,
-  SiExpress,
-  SiFirebase,
-  SiSupabase,
-  SiGit,
-  SiFlutter,
-  SiDart,
-} from "react-icons/si"
-import { TbBrandThreejs } from "react-icons/tb"
 
-const skills = [
-  { name: "React", Icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", Icon: SiNextdotjs, color: "#000000" },
-  { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
-  { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
-  { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
-  { name: "Express", Icon: SiExpress, color: "#000000" },
-  { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-  { name: "Three.js", Icon: TbBrandThreejs, color: "#000000" },
-  { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-  { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
-  { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
-  { name: "Dart", Icon: SiDart, color: "#0175C2" },
-  { name: "Git", Icon: SiGit, color: "#F05032" },
+const skillCategories = [
+  {
+    title: "Web3 & Blockchain",
+    skills: ["Solidity", "Ethereum", "Web3.js", "IPFS", "Smart Contracts", "The Graph", "DAO", "EVM"],
+    color: "from-purple-500 to-indigo-500"
+  },
+  {
+    title: "Creative & 3D",
+    skills: ["Three.js", "react-three-fiber", "WebGL", "GSAP", "Canvas API", "Motion Graphics"],
+    color: "from-pink-500 to-rose-500"
+  },
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "Tailwind CSS", "Redux", "Zustand"],
+    color: "from-blue-400 to-cyan-400"
+  },
+  {
+    title: "Backend & Systems",
+    skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "RESTful APIs", "Socket.io", "WebSockets"],
+    color: "from-emerald-400 to-green-500"
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS", "Vercel", "Docker", "CI/CD pipelines", "Git", "Firebase", "Supabase"],
+    color: "from-orange-400 to-amber-500"
+  },
+  {
+    title: "Mobile & Tools",
+    skills: ["React Native (iOS/Android)", "Jest", "Storybook", "Figma", "Agile/Scrum"],
+    color: "from-gray-400 to-gray-500"
+  }
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4">
+    <section id="skills" className="py-24 px-4 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Tech <span className="gradient-text">Stack</span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+            Technical <span className="text-gradient">Arsenal</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Technologies I work with to build modern, scalable applications
-          </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          {skills.map((skill, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, index) => (
             <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full px-4 py-2 hover:border-primary-blue/50 transition-all duration-300 group cursor-pointer chip-hover"
-              style={{ 
-                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.2)",
-                transform: "translateZ(0)",
-                willChange: "transform"
-              }}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
-              }}
-              whileTap={{ scale: 0.95 }}
+              key={category.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="glass-card p-6 flex flex-col group"
             >
-              <skill.Icon
-                className="w-5 h-5 group-hover:scale-110 transition-transform"
-                style={{ color: skill.color }}
-              />
-              <span className="text-sm font-medium">{skill.name}</span>
+              <h3 className={`text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r ${category.color}`}>
+                {category.title}
+              </h3>
+              
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {category.skills.map(skill => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 glass text-sm font-medium text-gray-300 rounded-md border border-white/5 group-hover:border-white/10 transition-colors"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .chip-hover:hover {
-          background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
-          box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.3), 
-                      0 0 0 1px rgba(59, 130, 246, 0.3);
-        }
-      `}</style>
     </section>
   )
 }

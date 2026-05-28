@@ -5,96 +5,84 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-24 px-4 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="gradient-text">Me</span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+            Bridging <span className="text-gradient">Logic</span> & <span className="text-gradient-web3">Creativity</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Profile Image Column */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, type: "spring" }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="lg:col-span-5 flex justify-center"
           >
-            <div className="relative">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary-blue to-blue-600 rounded-3xl blur-2xl opacity-20"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.2, 0.3, 0.2],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-              />
-              <motion.div
-                className="relative w-96 h-96 rounded-3xl overflow-hidden border-4 border-primary-blue/20"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image
-                  src="/images/sheriff-profile.jpg"
-                  alt="Sheriff Sodiq - MERN Stack Developer & 3D Enthusiast"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </motion.div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <div className="relative aspect-[4/5] w-full max-w-sm rounded-2xl overflow-hidden glass-card p-2">
+                <div className="relative w-full h-full rounded-xl overflow-hidden">
+                  <img
+                    src="/images/sheriff-profile.jpg"
+                    alt="Sheriff Sodiq - Full-Stack & Web3 Engineer"
+                  
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
 
-          {/* About Content */}
+          {/* About Content Column */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="lg:col-span-7 space-y-8"
           >
-            <h3 className="text-3xl font-bold mb-6">
-              MERN Stack Engineer & <span className="gradient-text">3D Enthusiast</span>
+            <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-gray-200">
+              Full-Stack Architecture meets <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Web3 & Real-Time Innovation</span>
             </h3>
 
-            <p className="text-gray-400 leading-relaxed text-lg">
-              I am a full-stack Engineer with a strong passion for Software Engineering, building clean, responsive
-              interfaces and real-world web applications that actually work well and look good. I have worked on
-              everything from e-commerce platforms to real-time chat apps, using tools like React, Next.js, TypeScript, Dart, Flutter
-              and MongoDB.
-            </p>
+            <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
+              <p>
+                I am a lead full-stack engineer who thrives at the intersection of robust backend systems and high-impact creative frontends. My expertise lies in designing scalable architecture using React, Next.js, Node.js, and AWS, ensuring systems are both performant and production-ready.
+              </p>
+              
+              <p>
+                What sets me apart is my ability to transcend traditional web development. I architect decentralized trustless systems on Ethereum using Solidity and IPFS, and engineer real-time multiplayer platforms utilizing WebSockets and CRDTs. 
+              </p>
 
-            <p className="text-gray-400 leading-relaxed text-lg">
-              Along the way, I have mentored juniors, contributed to open-source, and kept learning by doing. Whether
-              leading a feature or refining performance, I bring sharp execution, curiosity, and a builder's mindset to
-              every project.
-            </p>
+              <p>
+                Beyond logic and data flow, I craft immersive 3D experiences. Using Three.js and WebGL, I build interfaces that don't just function flawlessly—they captivate. Whether it's a DAO dispute resolution system or a gyroscope-controlled 3D dashboard, I deliver end-to-end excellence.
+              </p>
+            </div>
 
-            <p className="text-gray-400 leading-relaxed text-lg">
-              Recently, I've been exploring the exciting world of 3D web development with Three.js and React Three
-              Fiber, creating immersive experiences that push the boundaries of what's possible on the web.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="bg-gray-900/50 rounded-xl p-4 border border-gray-800">
-                <h4 className="text-primary-blue font-semibold mb-2">Experience</h4>
-                <p className="text-2xl font-bold">4+ Years</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6 border-t border-white/10">
+              <div className="glass-card p-4 text-center">
+                <h4 className="text-primary font-medium mb-1">Experience</h4>
+                <p className="text-2xl font-bold text-white">5+ Years</p>
               </div>
-              <div className="bg-gray-900/50 rounded-xl p-4 border border-gray-800">
-                <h4 className="text-primary-blue font-semibold mb-2">Projects</h4>
-                <p className="text-2xl font-bold">50+ Completed</p>
+              <div className="glass-card p-4 text-center">
+                <h4 className="text-emerald-400 font-medium mb-1">Focus</h4>
+                <p className="text-lg font-bold text-white">Web3 & 3D</p>
+              </div>
+              <div className="glass-card p-4 text-center col-span-2 md:col-span-1">
+                <h4 className="text-purple-400 font-medium mb-1">Cloud</h4>
+                <p className="text-lg font-bold text-white">AWS Certified</p>
               </div>
             </div>
           </motion.div>
