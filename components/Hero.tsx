@@ -95,7 +95,7 @@ export default function Hero() {
           >
             {[
               { Icon: FiGithub, href: "https://github.com/sodiqsheriff", label: "GitHub" },
-              { Icon: FiLinkedin, href: "https://linkedin.com/in/sodiqsheriff", label: "LinkedIn" },
+              { Icon: FiLinkedin, href: "https://www.linkedin.com/in/sodiq-sheriff-a65aa8231/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BfAamA3UuQ02BkMdtJClS8Q%3D%3D", label: "LinkedIn" },
               { Icon: FiMail, href: "mailto:sodiqheriff9@gmail.com", label: "Email" },
             ].map(({ Icon, href, label }, i) => (
               <motion.a
